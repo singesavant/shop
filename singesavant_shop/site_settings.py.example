@@ -1,0 +1,3 @@
+PAYPAL_API_USERNAME = 'your api username'
+PAYPAL_API_PASSWORD = 'your password'
+PAYPAL_API_SIGNATURE = 'your signature'

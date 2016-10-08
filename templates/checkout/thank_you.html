@@ -1,0 +1,46 @@
+{% extends "checkout/layout.html" %}
+
+{% load i18n %}
+
+{% block content %}
+
+<h1>Merci !</h1>
+
+<p class="lead">
+    {% blocktrans with number=order.number %}
+    <p>
+        Votre pré-commande a bien été enregistrée et surtout... <strong>merci de soutenir le singe</strong> dans ses débuts !
+    </p>
+    <p>
+        Conservez bien votre numéro unique <strong>{{ number }}</strong> : il vous servira pour récupérer votre commande au point relais. <em>Vous pouvez d'ailleurs imprimer ou sauvegarder la page comme mémo.</em>
+    </p>
+    {% endblocktrans %}
+</p>
+
+<div class="sub-header">
+    <h2>Comment va se passer la suite ?</h2>
+
+    <p>
+        Tout d'abord, dès que votre commande sera en cours de brassage, vous serez prévenu(e) ! A partir de ce moment, nous vous indiquerons un délais estimé pour récupérer vos précieuses bouteilles.
+    </p>
+    <p>
+        Enfin, dès que vos bières seront prêtes, vous serez <strong>averti(e) par e-mail</strong> de la date et du point de livraison dans Lille... vous n'aurez plus qu'à venir les récupérer et déguster !
+    </p>
+</div>
+
+
+{% block order_actions %}
+<div class="form-group">
+    <div class="row">
+        <div class="col-sm-4">
+            <p><a onclick="window.print()" href="#" class="btn btn-primary btn-block btn-lg">{% trans "Print this page" %}</a></p>
+        </div>
+        <div class="col-sm-4 col-sm-offset-4">
+            <p><a href="{{ homepage_url }}" class="btn btn-primary btn-block btn-lg">{% trans "Continue shopping" %}</a></p>
+        </div>
+    </div>
+</div>
+{% endblock order_actions %}
+
+
+{% endblock %}
