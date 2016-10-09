@@ -31,9 +31,6 @@ MEDIA_URL = '/media/'
 SECRET_KEY = '%dsit@#o%)$8h1)mc4oymus4s+v_o+lg93+hi$%p9@f*!^r(t^'
 
 
-ALLOWED_HOSTS = []
-
-
 # Application definition
 from oscar import get_core_apps
 
