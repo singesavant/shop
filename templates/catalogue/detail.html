@@ -45,6 +45,20 @@
                 {% endblock %}
 
 
+
+                <div id="variant_prices" style="display: none; visibility: hidden;">
+                    {% for variant in product.children.all %}
+
+                    {% purchase_info_for_product request variant as session %}
+
+                    {% if session.availability.is_available_to_buy %}
+                    <span value="{{ variant.id }}">{{ session.price.incl_tax|currency:session.price.currency }}</span>
+                    {% endif %}
+
+                    {% endfor %}
+                </div>
+
+
             {% block product_stock_record %}
                 {% include "catalogue/partials/stock_record.html" with verbose=1 %}
             {% endblock %}
@@ -64,5 +78,19 @@
 {% endblock content %}
 
 {% block extrascripts %}
-    {{ block.super }}
+{{ block.super }}
+
+<script type="text/javascript">
+ $(document).ready(function() {
+     $("#id_child_id").change(function(event) {
+         val = $("#id_child_id option:selected").val();
+         price_el = $("#variant_prices").find('[value=' + val + ']')[0];
+         price_text = $(price_el).html();
+
+         $(".price_color").html(price_text);
+     })
+
+ })
+</script>
+
 {% endblock %}
