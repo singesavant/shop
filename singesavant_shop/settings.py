@@ -193,10 +193,10 @@ OSCAR_REQUIRED_ADDRESS_FIELDS = ('first_name', 'last_name')
 OSCAR_INITIAL_ORDER_STATUS = 'Pending'
 OSCAR_INITIAL_LINE_STATUS = 'Pending'
 OSCAR_ORDER_STATUS_PIPELINE = {
-    'Pending': ('Brewed', 'Conditioned', 'Ready To Ship', 'Shipped', 'Cancelled',),
+    'Pending': ('Brewed', 'Conditioned', 'ReadyToShip', 'Shipped', 'Cancelled',),
     'Brewed': ('Conditioned', 'Cancelled'),
-    'Conditioned': ('Ready To Ship', 'Cancelled'),
-    'Ready To Ship': ('Shipped', 'Cancelled'),
+    'Conditioned': ('ReadyToShip', 'Cancelled'),
+    'ReadyToShip': ('Shipped', 'Cancelled'),
     'Shipped': (),
     'Cancelled': (),
 }
