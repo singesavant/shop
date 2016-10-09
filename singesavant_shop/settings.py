@@ -30,8 +30,6 @@ MEDIA_URL = '/media/'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = '%dsit@#o%)$8h1)mc4oymus4s+v_o+lg93+hi$%p9@f*!^r(t^'
 
-# SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
 
 ALLOWED_HOSTS = []
 
