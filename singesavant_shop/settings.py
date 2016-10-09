@@ -19,8 +19,8 @@ from .site_settings import *  # NOQA
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
-STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+STATIC_ROOT = os.path.join(BASE_DIR, '..', 'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, '..', 'media')
 
 MEDIA_URL = '/media/'
 
@@ -84,7 +84,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
-                'django.core.context_processors.i18n',
+                'django.template.context_processors.i18n',
                 'django.contrib.messages.context_processors.messages',
 
                 'oscar.apps.search.context_processors.search_form',
@@ -96,6 +96,8 @@ TEMPLATES = [
         },
     },
 ]
+
+INTERNAL_IPS = ['127.0.0.1']
 
 WSGI_APPLICATION = 'singesavant_shop.wsgi.application'
 
@@ -143,6 +145,10 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
+
 
 HAYSTACK_CONNECTIONS = {
     'default': {
@@ -151,6 +157,7 @@ HAYSTACK_CONNECTIONS = {
 }
 
 
+USE_LESS = DEBUG
 
 # OSCAR (e-commerce) config
 from django.utils.translation import ugettext_lazy as _

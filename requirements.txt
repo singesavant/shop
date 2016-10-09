@@ -1,3 +1,4 @@
 django-oscar==1.3
 -e git+https://github.com/SalahAdDin/django-oscar-paypal.git@0384769ae22228d11077593d18fb398f1893b5f6#egg=django_oscar_paypal
 django-compressor
+django-widget-tweaks
