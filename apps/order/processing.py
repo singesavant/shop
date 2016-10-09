@@ -10,7 +10,7 @@ class EventHandler(processing.EventHandler, mixins.OrderPlacementMixin):
         super(EventHandler, self).handle_order_status_change(order, new_status, note_msg)
 
         self.request = HttpRequest()
-        self.request.user = order.user or AnonymouseUser()
+        self.request.user = order.user or AnonymousUser()
 
 
         self.send_confirmation_message(order, "ORDER_STATUS_CHANGE_{0}".format(new_status))
