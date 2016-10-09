@@ -128,6 +128,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'fr-FR'
 
+# Includes all languages that have >50% coverage in Transifex
+# Taken from Django's default setting for LANGUAGES
+gettext_noop = lambda s: s
+LANGUAGES = (
+    ('en-gb', gettext_noop('British English')),
+    ('fr', gettext_noop('French')),
+    ('nl', gettext_noop('Dutch')),
+)
+
 TIME_ZONE = 'Europe/Paris'
 
 USE_I18N = True
