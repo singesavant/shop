@@ -18,9 +18,9 @@
 <!-- Facebook Open Graph data -->
 <meta property="og:title" content="{{ product.title }} | Le Singe Savant" />
 <meta property="og:type" content="website" />
-<meta property="og:url" content="{{ request.get_full_path }}" />
-<meta property="og:image:secure_url" content="{{ product.images.all.0.original.url }}" />
-<meta property="og:image" content="{{ product.images.all.0.original.url }}" />
+<meta property="og:url" content="https://{{ request.site.domain }}{{ request.get_full_path }}" />
+<meta property="og:image:secure_url" content="{{ request.site.demain }}}{{ product.images.all.0.original.url }}" />
+<meta property="og:image" content="https://{{ request.site.domain }}{{ product.images.all.0.original.url }}" />
 <meta property="og:description" content="{{ product.description|striptags }}" />
 <meta property="og:site_name" content="Le Singe Savant, brasserie urbaine à Lille" />
 
@@ -30,7 +30,7 @@
 <meta name="twitter:title" content="{{ product.title }}">
 <meta name="twitter:description" content="{{ product.description|striptags }}">
 <meta name="twitter:creator" content="@singesavantbrew">
-<meta name="twitter:image" content="{{ product.images.all.0.original.url }}">
+<meta name="twitter:image:src" content="https://{{ request.site.domain }}{{ product.images.all.0.original.url }}">
 
 
 {% endblock extrahead %}
