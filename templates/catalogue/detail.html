@@ -13,8 +13,26 @@
 {% block breadcrumbs %}
 {% endblock %}
 
-{% block header %}
-{% endblock header %}
+{% block extrahead %}
+{{ block.super }}
+<!-- Facebook Open Graph data -->
+<meta property="og:title" content="{{ product.title }} | Le Singe Savant" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:image" content="{{ product.images.all.0.original.url }}" />
+<meta property="og:description" content="{{ product.description|safe }}" />
+<meta property="og:site_name" content="Le Singe Savant, brasserie urbaine à Lille" />
+
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@singesavantbrew">
+<meta name="twitter:title" content="{{ product.title }}">
+<meta name="twitter:description" content="{{ product.description|safe }}">
+<meta name="twitter:creator" content="@singesavantbrew">
+<meta name="twitter:image:src" content="{{ product.images.all.0.original.url }}">
+
+
+{% endblock extrahead %}
 
 {% block content %}
 
