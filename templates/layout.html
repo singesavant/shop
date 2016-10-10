@@ -2,6 +2,14 @@
 {% load staticfiles %}
 {% load promotion_tags %}
 
+{% block extrahead %}
+
+{% if request.get_full_path == '/' %}
+<meta http-equiv="refresh" content="0; url=/catalogue/pre-commande-hop-shot-ipa_3/">
+{% endif %}
+
+{% endblock %}
+
 {% block styles %}
     {% comment %}
         If you are developing Oscar's CSS, or overriding Oscar's CSS

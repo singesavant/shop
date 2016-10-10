@@ -19,6 +19,7 @@
 <meta property="og:title" content="{{ product.title }} | Le Singe Savant" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ request.get_full_path }}" />
+<meta property="og:image:secure_url" content="{{ product.images.all.0.original.url }}" />
 <meta property="og:image" content="{{ product.images.all.0.original.url }}" />
 <meta property="og:description" content="{{ product.description|striptags }}" />
 <meta property="og:site_name" content="Le Singe Savant, brasserie urbaine à Lille" />
